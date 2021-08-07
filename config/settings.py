@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'login',
+    'encrypted_fields'
+]
+
+FIELD_ENCRYPTION_KEYS = [
+    "f164ec6bd6fbc4aef5647abc15199da0f9badcc1d2127bde2087ae0d794a9a0b"
 ]
 
 MIDDLEWARE = [
@@ -75,8 +82,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '18.119.17.121',
+        'NAME': 'server_dev',
+        'USER': 'root',
+        'PASSWORD': 'admin123!',
+        'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 
